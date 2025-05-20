@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account - VideoStreamPro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">Video<span>Stream</span>Pro</a>
+            <nav class="navbar">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="videos.html" class="nav-link">Videos</a></li>
+                    <li><a href="earn.html" class="nav-link">Earn</a></li>
+                    <li><a href="account.html" class="nav-link active">My Account</a></li>
+                    <li><a href="login.html" class="nav-link">Login</a></li>
+                </ul>
+                <div class="user-balance">
+                    <span class="balance">₵<span id="current-balance">0.00</span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="account-main">
+        <div class="container">
+            <section class="account-header">
+                <div class="profile-section">
+                    <div class="profile-pic">
+                        <img src="assets/profile-placeholder.jpg" alt="Profile picture" id="profile-image">
+                        <button class="btn change-photo">Change Photo</button>
+                    </div>
+                    <div class="profile-info">
+                        <h1 id="username">User123</h1>
+                        <p class="member-since">Member since: <span id="join-date">January 2023</span></p>
+                        <div class="account-status">
+                            <span class="status-badge verified">Verified Account</span>
+                            <span class="status-badge premium">Premium Member</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="account-stats">
+                    <div class="stat-card">
+                        <div class="stat-value" id="total-earned">₵0.00</div>
+                        <div class="stat-label">Total Earned</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="videos-watched">0</div>
+                        <div class="stat-label">Videos Watched</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="referrals">0</div>
+                        <div class="stat-label">Referrals</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="account-section">
+                <h2>Account Balance</h2>
+                <div class="balance-card">
+                    <div class="balance-amount">
+                        <span class="currency">₵</span>
+                        <span id="account-balance">0.00</span>
+                    </div>
+                    <button class="btn withdraw-btn" id="withdraw-btn">Withdraw Funds</button>
+                    <p class="minimum-withdrawal">Minimum withdrawal: ₵80</p>
+                </div>
+            </section>
+
+            <section class="account-section">
+                <h2>Withdrawal Methods</h2>
+                <div class="payment-methods">
+                    <div class="method-card active" data-method="momo">
+                        <img src="MTN LOGO.png" alt="MTN Mobile Money">
+                        <span>MTN MoMo</span>
+                    </div>
+                    <div class="method-card" data-method="telecel">
+                        <img src="telecel cash logo.png" alt="Telecel Cash">
+                        <span>Telecel Cash</span>
+                    </div>
+                </div>
+                
+                <form class="withdrawal-form" id="withdrawal-form">
+                    <div class="form-group">
+                        <label for="phone-number">Mobile Number</label>
+                        <input type="tel" id="phone-number" placeholder="e.g. 0244123456" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="withdraw-amount">Amount (₵)</label>
+                        <input type="number" id="withdraw-amount" min="80" step="1" required>
+                    </div>
+                    <button type="submit" class="btn submit-withdrawal">Request Withdrawal</button>
+                </form>
+            </section>
+
+            <section class="account-section">
+                <h2>Transaction History</h2>
+                <div class="transaction-history">
+                    <div class="transaction-header">
+                        <span>Date</span>
+                        <span>Description</span>
+                        <span>Amount</span>
+                        <span>Status</span>
+                    </div>
+                    <div class="transaction-list" id="transaction-list">
+                        <!-- Transactions will be added here by JavaScript -->
+                        <div class="no-transactions">No transactions yet</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="account-section">
+                <h2>Referral Program</h2>
+                <div class="referral-program">
+                    <div class="referral-info">
+                        <p>Earn 20% of what your referrals make! Share your link below:</p>
+                        <div class="referral-link">
+                            <input type="text" id="referral-link" value="https://videostreampro.com/ref/user123" readonly>
+                            <button class="btn copy-link">Copy</button>
+                        </div>
+                        <div class="social-share">
+                            <button class="btn share-btn facebook">Share on Facebook</button>
+                            <button class="btn share-btn whatsapp">Share on WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="referral-stats">
+                        <div class="referral-stat">
+                            <div class="stat-number" id="total-referrals">0</div>
+                            <div class="stat-label">Total Referrals</div>
+                        </div>
+                        <div class="referral-stat">
+                            <div class="stat-number" id="referral-earnings">₵0.00</div>
+                            <div class="stat-label">Referral Earnings</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>VideoStreamPro</h3>
+                    <p>© 2023 All Rights Reserved</p>
+                    <p>Earn money by watching videos</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="account.js"></script>
+</body>
+</html>
